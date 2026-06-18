@@ -1,0 +1,313 @@
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #0A1628;  /* Obsidian Black / Deep Navy */
+    color: #C4A44A;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+a {
+    color: #B8860B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #D4AF37;
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-color: #0A1628;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Slow-appearing gold fractures on the hero background */
+.hero-fractures {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(135deg, transparent 48%, #B8860B 49%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, #8B7D3C 49%, transparent 50%),
+        linear-gradient(90deg, transparent 48%, #B8860B 49%, transparent 50%);
+    background-size: 300px 300px, 200px 200px, 250px 250px;
+    background-position: 20% 40%, 70% 60%, 50% 80%;
+    opacity: 0;
+    animation: fractureAppear 3s ease-out forwards;
+}
+
+@keyframes fractureAppear {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 0.12; transform: scale(1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    color: #D4AF37;  /* Antique Gold */
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1.5s ease-out 0.5s forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #C4A44A;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1.5s ease-out 1s forwards;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid #B8860B;
+    color: #B8860B;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 1.5s ease-out 1.5s forwards;
+}
+
+.hero-button:hover {
+    background-color: #B8860B;
+    color: #0A1628;
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SCROLL FRACTURE ===== */
+.scroll-fracture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #B8860B 50%, transparent 100%);
+    opacity: 0;
+    z-index: 999;
+    pointer-events: none;
+    animation: revealFracture 1s ease-out 2s forwards;
+}
+
+@keyframes revealFracture {
+    0% { opacity: 0; width: 0%; }
+    100% { opacity: 0.6; width: 100%; }
+}
+
+/* ===== THE STORY ===== */
+.story {
+    background-color: #0A1628;
+}
+
+.story-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #D4AF37;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ===== THE MOTHER'S TRIBUTE ===== */
+.tribute {
+    background-color: #F5F0E6;  /* Aged Ivory Stone */
+    text-align: center;
+}
+
+.tribute-name {
+    font-size: 3rem;
+    font-weight: normal;
+    color: #3D2E1C;
+    margin-bottom: 1rem;
+}
+
+.tribute-line {
+    font-style: italic;
+    color: #5C4A32;
+    font-size: 1.1rem;
+}
+
+/* ===== BOOK DISPLAY ===== */
+.book-display {
+    background-color: #0A1628;
+    padding: 4rem 1.5rem;
+}
+
+.book-stand {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.book-cover {
+    width: 140px;
+    height: 210px;
+    background-color: #0F1F33;
+    border: 1px solid #B8860B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B8860B;
+    font-style: italic;
+    font-size: 0.95rem;
+    transition: transform 0.5s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+    border-color: #D4AF37;
+    color: #D4AF37;
+}
+
+.spine {
+    width: 40px;
+}
+
+/* ===== BLURB ===== */
+.blurb {
+    background-color: #0F1F33;
+}
+
+.lead {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #D4AF37;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.blurb p {
+    margin-bottom: 1.2rem;
+    color: #C4A44A;
+}
+
+.blurb em {
+    color: #D4AF37;
+}
+
+/* ===== QUOTE ===== */
+.quote-section {
+    background-color: #0A1628;
+    text-align: center;
+    position: relative;
+}
+
+.quote-section::before,
+.quote-section::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 1px;
+    background: #B8860B;
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.quote-section::before { top: 1rem; }
+.quote-section::after { bottom: 1rem; }
+
+blockquote {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #D4AF37;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+cite {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: #8B7D3C;
+}
+
+/* ===== FINAL SECTION ===== */
+.final {
+    background-color: #F5F0E6;  /* Aged Ivory Stone */
+    text-align: center;
+}
+
+.final-title {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #3D2E1C;
+    margin-bottom: 0.5rem;
+}
+
+.final-subtitle {
+    font-style: italic;
+    color: #5C4A32;
+    margin-bottom: 2.5rem;
+}
+
+.gold-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #B8860B;
+    color: #B8860B;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+    background-color: #B8860B;
+    color: #0A1628;
+    border-color: #B8860B;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: #0A1628;
+    color: #8B7D3C;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 2rem 1.5rem;
+}
+
+.social a {
+    color: #B8860B;
+    border-bottom: none;
+}
