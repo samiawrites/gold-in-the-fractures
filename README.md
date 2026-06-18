@@ -44,3 +44,18 @@ Clone the repository and open `index.html` in any browser.
 git clone https://github.com/samiaswrites/gold-in-the-fractures.git
 cd gold-in-the-fractures
 open index.html
+```
+
+Author
+
+Samia's
+Cartographer of Fractures.
+This is his first book under this name.
+
+📸 Instagram: @samiaswrites
+
+---
+
+© 2025 Samia's. All rights reserved.
+
+```
